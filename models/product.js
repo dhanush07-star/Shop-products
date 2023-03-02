@@ -2,8 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = class Product {
-  constructor(t) {
-    this.title = t;
+  constructor(title,imgURl, price,description) {
+    this.title = title;
+    this.imgURl = imgURl;
+    this.price = price;
+    this.description = description;
   }
 
   save() {
