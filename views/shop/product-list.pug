@@ -16,9 +16,12 @@ block content
                         div.card__content
                             h2.product__price $ #{product.price}
                             p.product__description #{product.description}
-                        .card__actions
-                            button.btn Add to Cart
+                        div.card__actions
+                            a.btn(href=`/product-list/` + product.id) Details
+                                form(action="/cart", method="post") 
+                                    button.btn(type="submit") Add to cart
+                                    input(type="hidden", name ="productId" , value = product.id)        
         else
             h1 No Products
 
-//- https://m.economictimes.com/thumb/height-450,width-600,imgsize-67262,msid-92073673/one-piece.jpg
+//- https://m.economictimes.com/thumb/height-450,width-600,imgsize-67262,msid-92073673/one-piece.jpg 
